@@ -1,0 +1,25 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+left to right direction
+actor NewsAgency as Agency << System >>
+actor NewsChannel as Channel << System >>
+
+rectangle "News Delivery" {
+
+    (broadcasts news to NewsChannels) as broadcast
+
+    (is notified about news) as notify
+
+    (unsubscribe from NewsAgency) as unsubscribe
+
+    (subscribes to NewsAgency) as subscribe
+}
+
+Channel --> subscribe
+Channel --> unsubscribe
+Channel --> notify
+
+Agency --> broadcast
+
+@enduml

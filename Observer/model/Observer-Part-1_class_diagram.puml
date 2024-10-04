@@ -23,6 +23,9 @@
 
         }
 
-    NewsAgency -- NewsChannel : < notifys ..0
+    note left of NewsAgency: Observable/Publisher;
+    note right of NewsChannel: Observer/Subscriber;
+
+    NewsAgency o-right-> "0..*" NewsChannel : notifys >
 
 @enduml
