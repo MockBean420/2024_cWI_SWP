@@ -1,0 +1,28 @@
+@startuml Observer-Part-1
+
+    class NewsChannel{
+
+        -name: string
+
+        + NewsChannel(name: string)
+
+        + notify (message: string)
+
+    }
+
+    class NewsAgency{
+
+            -name: string
+
+            + NewsAgency(name: string)
+
+            + subscribe(channel: NewsChannel)
+            + unsubscribe(channel: NewsChannel)
+
+            + broadcast (message: string)
+
+        }
+
+    NewsAgency -- NewsChannel : < notifys ..0
+
+@enduml
